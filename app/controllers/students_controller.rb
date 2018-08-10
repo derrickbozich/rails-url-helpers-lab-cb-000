@@ -8,7 +8,7 @@ class StudentsController < ApplicationController
   def show
     @student = set_student
   end
-  
+
   def activate
     @student = set_student
     binding.pry
