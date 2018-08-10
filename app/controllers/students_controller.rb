@@ -8,14 +8,16 @@ class StudentsController < ApplicationController
   def show
     @student = set_student
   end
+  
+  def activate
+    @student = set_student
+    binding.pry
+    @student.active ? @student.active = false : @student.active = true
+    @student.save
+    redirect student_path(@student)
 
-  # def activate
-  #   @student = set_student
-  #   @student.active ? @student.active = false : @student.active = true
-  #   @student.save
-  #   redirect student_path(@student)
-  #
-  # end
+  end
+
 
   private
 
