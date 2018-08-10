@@ -11,7 +11,7 @@ class StudentsController < ApplicationController
 
   def activate
     @student = set_student
-    binding.pry
+    
     @student.active ? @student.active = false : @student.active = true
     @student.save
     redirect student_path(@student)
